@@ -93,7 +93,18 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
+function sumNumbers(array) {
+  let sum = null;
+  
+  if (array.length === 0) {
+    return 0
+  }
 
+  array.forEach((number) => {
+     sum += number;
+  })
+  return sum;
+}
 
 
 
@@ -117,7 +128,18 @@ addList(7,-12) //=> -5
 -----------------------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
+function addList(...numbers) {
+  let total = null;
 
+  if (numbers.length === 0) {
+    return 0;
+  } else {
+    for (number of numbers) {
+      total += number;
+    }
+  }
+  return total;
+}
 
 
 
@@ -144,7 +166,18 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------------------*/
 // Your solution for 05-computeRemainder here:
 
+function computeRemainder(dividend, divisor) {
 
+  if (divisor === 0) {
+    return Infinity;
+  } else {
+
+    let quotient = Math.floor(dividend / divisor);
+
+    let remainder = dividend - (quotient * divisor);
+    return remainder;
+  }
+}
 
 
 
@@ -171,7 +204,24 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------------------*/
 // Your solution for 06-range here:
 
+function range(num1, num2) {
+  let range = [];
+  let rangeLength = num2 - num1;
 
+  if (num1 > num2) {
+
+    return 'First argument must be less than second';
+
+  } else {
+
+    for (let i = 0; i < rangeLength; i++) {
+      range.push(num1 + i);
+    }
+  }
+
+  return range;
+
+}
 
 
 
