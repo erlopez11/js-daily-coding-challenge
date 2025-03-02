@@ -205,7 +205,7 @@ range(5,2) //=> "First argument must be less than second"
 // Your solution for 06-range here:
 
 function range(num1, num2) {
-  let range = [];
+  const range = [];
   let rangeLength = num2 - num1;
 
   if (num1 > num2) {
@@ -243,7 +243,13 @@ reverseUpcaseString("SEI Rocks!") //=> "!SKCOR IES"
 -----------------------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
+function reverseUpcaseString(string) {
+  const strArray = string.split('');
+  const reversedArray = strArray.reverse();
+  let reversedString = reversedArray.join('').toUpperCase();
 
+  return reversedString
+}
 
 
 
@@ -265,7 +271,16 @@ removeEnds('a') //=> "" (empty string)
 -----------------------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+function removeEnds(str) {
+  let newString = ''
 
+  if (str.length < 3) {
+    return newString;
+  } else {
+    let newStr = str.slice(1, -1);
+    return newStr;
+  }
+}
 
 
 
@@ -307,7 +322,19 @@ charCount('Today is fantastic!')
 -----------------------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
+function charCount(string) {
+const strArray = string.split('');
 
+const characters = strArray.reduce((acc, char) => {
+    if (acc[char]) {
+      acc[char] = acc[char] + 1;
+    } else {
+      acc[char] = 1;
+    }
+    return acc
+  }, {});
+  return characters;
+}
 
 
 
