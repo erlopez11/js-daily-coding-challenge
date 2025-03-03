@@ -404,7 +404,21 @@ isPalindrome('') //=> true
 -----------------------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
+function isPalindrome(string) {
+  let reverseString = string.split('').reverse().join('').replace(/ /g, '');
+  let noSpaceString = string.replace(/ /g, '');
+  
 
+  if (string.length === 0 || string.length === 1) {
+    return true;
+  } else {
+    if (reverseString.toLowerCase() === noSpaceString.toLowerCase()) {
+      return true
+    } else {
+      return false;
+    }
+  }
+}
 
 
 
@@ -434,7 +448,20 @@ hammingDistance('abc', 'ab') //=> NaN
 -----------------------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
 
+function hammingDistance(str1, str2) {
+  let diffCount = 0
 
+  if (str1.length !== str2.length) {
+    return NaN;
+  } else {
+    for (let i = 0; i < str1.length; i++) {
+      if (str1[i] !== str2[i]) {
+        diffCount += 1;
+      }
+    }
+  }
+  return diffCount;
+}
 
 
 
