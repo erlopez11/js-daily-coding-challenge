@@ -621,7 +621,16 @@ findHighestPriced([
 -----------------------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
+function findHighestPriced(arr) {
+  let comparison = arr[0];
 
+  arr.forEach(obj => {
+    if (obj.price > comparison.price) {
+      comparison = obj;
+    }
+  })
+  return comparison;
+}
 
 
 
