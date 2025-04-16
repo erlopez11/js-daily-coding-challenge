@@ -668,7 +668,14 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
-
+function mapArray(arr, callbackFn) {
+  let newArr = [];
+  arr.forEach((item, idx) => {
+    let result = callbackFn(item, idx);
+    newArr.push(result);
+  });
+  return newArr;
+}
 
 
 
@@ -719,7 +726,13 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
-
+function reduceArray(array, callbackFn, initial_value) {
+  let result = initial_value;
+  for (let i = 0; i < array.length; i ++) {
+    result = callbackFn(result, array[i], i)
+  }
+  return result;
+}
 
 
 
